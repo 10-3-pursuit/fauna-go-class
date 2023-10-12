@@ -1,6 +1,13 @@
 const { readJSONFile, writeJSONFile } = require("./src/helpers");
 
-const { create, index } = require("./src/animalController");
+const {
+  create,
+  index,
+  show,
+  destroy,
+  update,
+  score,
+} = require("./src/animalController");
 
 const animals = readJSONFile("./data", "animals.json");
 
@@ -23,16 +30,22 @@ function run() {
       writeToFile = true;
       break;
     case "show":
-      inform(action, animal);
+      const animalView = show(animals, animal); // animal is the animalID
+      inform(animalView);
       break;
     case "update":
-      inform(action, animal);
+      updatedAnimals = update(animals, animal, process.argv[4]);
+      writeToFile = true;
       break;
     case "destroy":
-      inform(action, animal);
+      updatedAnimals = destroy(animals, animal);
+      writeToFile = true;
       break;
     case "score":
-      inform(action);
+      inform(
+        `Current points sum of all animals you've added to your database:`,
+        score(animals)
+      );
       break;
     default:
       inform("There was an error.");

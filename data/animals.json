@@ -1,7 +1,5 @@
 [
-  { "name": "coyote", "id": "sNbk", "points": 40 },
-  { "name": "manatee", "id": "ewH8", "points": 10 },
-  { "name": "red fox", "id": "08Yh", "points": 80 },
-  { "name": "owl", "id": "nI2N", "points": 10 },
-  { "name": "seal", "id": "kd25", "points": 30 }
+  { "name": "bear", "id": "sNbk", "points": 10 },
+  { "name": "snake", "id": "ewH8", "points": 10 },
+  { "name": "bald eagle", "id": "kd25", "points": 100 }
 ]
