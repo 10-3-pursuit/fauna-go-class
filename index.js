@@ -1,6 +1,6 @@
 const { readJSONFile, writeJSONFile } = require("./src/helpers");
 
-const { create } = require("./src/animalController");
+const { create, index } = require("./src/animalController");
 
 const animals = readJSONFile("./data", "animals.json");
 
@@ -15,7 +15,8 @@ function run() {
 
   switch (action) {
     case "index":
-      inform(action, animals);
+      const animalsView = index(animals);
+      inform(animalsView);
       break;
     case "create":
       updatedAnimals = create(animals, animal);
